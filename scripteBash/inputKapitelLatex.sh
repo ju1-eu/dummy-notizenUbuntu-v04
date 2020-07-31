@@ -75,7 +75,7 @@ for i in *.tex; do
 	# dateiname ohne Endung
 	texname=`basename "$i" .tex`
 	printf "%%\n"                                         >> ../$archiv/$file		
-	printf "%%\chapter{$texname}%% book, print anpassen\n"  >> ../$archiv/$file
+	printf "\chapter{$texname}%% book, print anpassen\n"  >> ../$archiv/$file
 	printf "%%\input{$tabellen/$texname}\n"                 >> ../$archiv/$file
 done
 
