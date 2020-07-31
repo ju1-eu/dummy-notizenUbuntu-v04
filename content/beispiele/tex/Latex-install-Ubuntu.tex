@@ -1,0 +1,59 @@
+% letztes Update: 27-Jul-20
+Quelle: Dr.~Uwe Ziegenhagen -- Anleitung zur TEX Live Installation
+
+\section{TEX Live Download}\label{tex-live-download}
+
+Download \footnote{\url{http://mirror.ctan.org/systems/texlive/tlnet}}
+
+Download-texlive vgl.~(\autoref{code:Download-texlive}).
+
+\lstset{language=C}% C, TeX, Bash, Python 
+\begin{lstlisting}[%% anpassen
+caption={Download-texlive},label={code:Download-texlive}
+]
+cd Downloads
+tar xvfz install-tl-unx.tar.gz
+cd install-tl-20200114
+perl install-tl
+perl install-tl -gui
+\end{lstlisting}
+
+\section{TeX Version}\label{tex-version}
+
+tex --version
+
+\section{TEX Live Installation}\label{tex-live-installation}
+
+Install-texlive vgl.~(\autoref{code:Install-texlive}).
+
+\lstset{language=C}% C, TeX, Bash, Python 
+\begin{lstlisting}[%% anpassen
+caption={Install-texlive},label={code:Install-texlive}
+]
+sudo apt install texlive texlive-latex-recommended texlive-fonts-recommended \
+    texlive-latex-base texlive-base texlive-latex-extra texlive-lang-german
+
+# Verbesserte Schriftarten bei T1-Kodierung
+sudo apt-get install cm-super 
+\end{lstlisting}
+
+\section{Umgebungsvariablen für
+Unix}\label{umgebungsvariablen-fuer-unix}
+
+Umgebungsvariable vgl.~(\autoref{code:Umgebungsvariable}).
+
+\lstset{language=C}% C, TeX, Bash, Python 
+\begin{lstlisting}[%% anpassen
+caption={Umgebungsvariable},label={code:Umgebungsvariable}
+]
+vi ~/.profile
+# Datei 
+PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH; export PATH
+MANPATH=/usr/local/texlive/2019/texmf-dist/doc/man:$MANPATH; export MANPATH
+INFOPATH=/usr/local/texlive/2019/texmf-dist/doc/info:$INFOPATH; export INFOPATH
+
+sudo vi /etc/manpath.config
+# Datei 
+MANPATH_MAP /usr/local/texlive/2019/bin/x86_64-linux \
+  /usr/local/texlive/2019/texmf-dist/doc/man  
+\end{lstlisting}

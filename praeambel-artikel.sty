@@ -1,0 +1,114 @@
+\ProvidesPackage{praeambel-artikel}
+\RequirePackage[ngerman]{babel}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+% Schrift
+%\RequirePackage[osf,sc]{mathpazo} % Fonts to typeset mathematics to match Palatino
+%\RequirePackage[scale=.9,semibold]{sourcecodepro}    % Use SourceCodePro with TeX(-alike) systems
+%\RequirePackage[osf]{sourcesanspro}    % Use SourceSansPro with TeX(-alike) systems
+\RequirePackage{times}
+\RequirePackage{eulervm}%Mathe
+%\RequirePackage{lmodern}
+\RequirePackage[official,right]{eurosym}% \euro
+\RequirePackage[dvipsnames,usenames]{xcolor}
+\RequirePackage{amsthm}
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{blindtext}
+\RequirePackage{nameref}
+\RequirePackage{hyperref}
+\RequirePackage{makeidx}
+\RequirePackage{float} 
+\RequirePackage{footnote}
+\RequirePackage{amsmath}
+\RequirePackage{array}  
+\RequirePackage{amssymb}
+\RequirePackage{textcomp}
+\RequirePackage{siunitx}
+\RequirePackage{qrcode}% Anwendung: \qrcode[hyperlink,height=3em]{\website}
+\RequirePackage{underscore}% Unterstrich ____
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{csquotes} 
+\RequirePackage{pdfpages}
+\RequirePackage{wallpaper}
+
+% bibliography
+\RequirePackage[
+bibencoding=utf8,
+backend=biber,% bibtex, biber
+backref=false,backrefstyle=three+,url=true,urldate=comp,abbreviate=false,maxnames=20
+]{biblatex} %Paket laden
+
+% eigene Farbe definieren
+% Adobe Prozessfarben: CMYK: 100,50,0,35 -> 1,0.5,0,0.35
+\definecolor{orange}{cmyk}{0,0.55,0.61,0}   % 0,55,61,0
+\definecolor{rot6}{cmyk}{0.33,1,0.95,0.05}  % 33,100,95,5
+\definecolor{blau6}{cmyk}{1,0.86,0.4,0.35}  % 100,86,40,35
+\definecolor{grau2}{cmyk}{0,0,0,0.4}          % 0,0,0,40
+
+\RequirePackage{listings}
+% listings
+\lstset{basicstyle=\linespread{1}\ttfamily\small,floatplacement=!htb,captionpos=t,abovecaptionskip=.5\baselineskip,belowcaptionskip=.5\baselineskip,upquote=true,showstringspaces=false,inputencoding=utf8,tabsize=4,
+    keywordstyle=\bfseries \color{black},
+	commentstyle=\color{rot6},
+	%stringstyle=\color{orange},
+	breaklines=true,
+  	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+	breakatwhitespace=false
+}
+\lstset{literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1 {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1 {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1 {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1 {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1 {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1 {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1 {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1 {€}{{\EUR}}1 {£}{{\pounds}}1 {~}{{\textasciitilde}}1 {-}{{-}}1 }
+\makeatletter\renewcommand\verbatim@font{\ttfamily}\makeatother
+\makeatletter\renewcommand\lstinline[1][]{ \errmessage{In diesem Template bitte die 'code'-Umgebung nutzen (an Stelle von 'lstinline').} }\makeatother
+
+% Marginalien
+\newcommand{\marginlabel}[1]
+{\mbox{}\marginpar{\RaggedRight\hspace{0pt}#1}}
+\setlength{\marginparwidth}{2cm}
+
+\definecolor{mycolor}{rgb}{0.122, 0.435, 0.698}% Rule colour
+\makeatletter
+\newcommand{\mybox}[1]{%
+	\setbox0=\hbox{#1}%
+	\setlength{\@tempdima}{\dimexpr\wd0+13pt}%
+	\begin{tcolorbox}[colframe=mycolor,boxrule=0.5pt,arc=4pt,
+		left=6pt,right=6pt,top=6pt,bottom=6pt,boxsep=0pt,width=0.95\textwidth]
+		#1
+	\end{tcolorbox}
+}
+\makeatother
+
+% Eigene Befehle können hier definiert werden
+%% Textauszeichnung
+% \emph{kursiv}
+% \textrm{Antiqua}, \textsf{Grotesk}, \texttt{Maschinenschrift},
+% \textmd{normal}, \textbf{breiter}, \textup{aufrecht}, \textsl{geneigt},
+% \textit{kursiv}, \textsc{Kapitaelchen}
+
+%% Schriftgroesse
+% \tiny{winzig}, \scriptsize{sehr klein}, \footnotesize{klein},
+% \small{klein}, \normalsize{normal}, \large{gross}, \Large{groesser},
+% \LARGE{ganz gross}, \huge{riesig}, \Huge{gigantisch}
+
+%% eigene Befehle definieren
+% Textauszeichnung: \wort{Beispiel}, \fremdwort{prezioes}
+\newcommand{\wort}[1]{\emph{#1}}
+\newcommand{\fremdwort}[1]{\textsf{#1}}
+
+%% Textabstand:  Verwendung: \abstand{}
+\newcommand{\abstand}[1]{\hspace{10em}{#1}}
+%% quad, qquad, hspace{10em}, vspace{10em}
+%
+% Wichtig (Optionale Parameter)
+%% Wort Kursiv u. in Farbe
+\newcommand{\wichtig}[2][rot6]{\textcolor{#1}{\emph{#2}}}
+
+% pdftitle, pdfauthor, pdfsubject, pdfkeywords	
+\hypersetup{%
+	%colorlinks=true,	   
+	linkcolor=rot6,		
+	filecolor=blau6,		
+	urlcolor=blau6,			
+	citecolor=ForestGreen,	
+}
+
+\makeindex

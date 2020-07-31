@@ -1,0 +1,84 @@
+% letztes Update: 24-Dez-19 
+\documentclass[a4paper,16pt,fleqn]{scrartcl}% a4paper, 1920x1080, 3.840x2.160, 4.096x2.160
+\usepackage[landscape,includehead,includefoot,top=1cm,bottom=1cm,left=1cm,right=2.5cm]{geometry}
+
+%-----praesentation
+\usepackage{scrpage2}%   Kopf - Fusszeile
+\pagestyle{scrheadings}% Seitenstil
+\clearscrheadfoot
+\setkomafont{pagenumber}{\color{grau2}}%grau2
+\cfoot{\textcolor{grau2}{\footnotesize \titel}}% center, Fuss, {} = ohne Eintrag
+\ofoot{\footnotesize \pagemark}% Aussen, Fuss, Seitenzahl
+\ifoot{\textcolor{grau2}{\footnotesize \autor}} 
+
+%-----Kapitel zentrieren
+\setkomafont{section}{\huge\centering}
+%-----Einruecken der ersten Zeile, Absatz
+\setlength{\parindent}{0em}
+
+% Metadaten einlesen 
+\input{content/metadata}
+% Pakete
+\usepackage{praeambel-artikel}% Pakete
+
+% Literatur laden
+\bibliography{content/literatur}      %% anpassen
+\bibliography{content/literatur-kfz}  %% anpassen
+\bibliography{content/literatur-sport}%% anpassen
+
+
+%% Kapitelueberschriften farbig
+\usepackage{sectsty}
+\chapterfont{\color{rot6}}
+\sectionfont{\color{rot6}}
+\subsectionfont{\color{rot6}}
+\subsubsectionfont{\color{rot6}}
+
+\begin{document}
+\title{\titel}% Thema
+\author{\autor}
+%\date{\today}
+\date{Version: 2019/09/29}
+%\maketitle	
+	
+\begin{titlepage}
+	\newgeometry{left=0.6cm,top=0.6cm,right=0.6cm,bottom=0.6cm} %defines the geometry for the titlepage
+	
+	% Hindergrundgrafik
+	\ThisTileWallPaper{\paperwidth}{\paperheight}{Grafiken/titelbild-beamer.pdf}
+	
+	%\fcolorbox{gruen-dunkel}{gruen-hell}{% Rahmen
+	\begin{minipage}[t][18cm][c]{0.3\textwidth}
+		\makebox[\textwidth][c]{
+			\includegraphics[width=.1\paperwidth]{Grafiken/logo.eps}	
+		}\\[3ex] \vfill
+		{\Huge \bfseries \sffamily \titel }\\[3ex] 
+		{\Large \sffamily \autor}          \\[3ex] 
+		{\Large \sffamily \today}          \\[3ex] \vfill
+		\qrcode[hyperlink,height=4em]{\website}
+	\end{minipage}%}
+	\hspace{2.5em}
+	%\fcolorbox{gruen-dunkel}{gruen-hell}{% Rahmen	
+	\begin{minipage}[t][18cm][c]{0.65\textwidth}
+		\makebox[\textwidth][c]{
+			\includegraphics[width=.3\paperwidth]{Grafiken/titelbild.pdf}
+		}\\[10ex]
+		% Zusammenfassung
+		%\vfill 
+		\begin{abstract}
+			Kurze Beschreibung.
+		\end{abstract}
+		%\vfill 	
+	\end{minipage}%}
+\end{titlepage}
+\restoregeometry % restores the geometry
+\nopagecolor% Use this to restore the color pages to white
+
+%---------------------
+\input{content/LaTeX-Beispiel-beamer}
+%---------------------
+
+%\clearpage
+%\phantomsection\addcontentsline{toc}{chapter}{Literatur}
+%\printbibliography% Verzeichnis drucken
+\end{document}

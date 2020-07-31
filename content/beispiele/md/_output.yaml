@@ -1,0 +1,30 @@
+---
+output: 
+  pdf_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+    latex_engine: pdflatex
+    citation_package: biber
+fontsize: 11pt 
+fontfamily: times
+papersize: a4
+lang: de
+documentclass: scrartcl
+classoption:
+- fleqn
+- ngerman
+hyperrefoptions:
+- linktoc=all
+- pdfwindowui
+pagestyle: headings
+colorlinks: true
+bibliography: literatur-kfz.bib
+csl: zitierstil-number.csl
+html:
+  embed_local_images: true
+  embed_svg: true
+  offline: true
+  export_on_save:
+    html: true
+---

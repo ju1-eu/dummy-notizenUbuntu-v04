@@ -1,0 +1,54 @@
+% letztes Update: 1-Jun-20 
+\documentclass{scrbook} % <= Druckversion: "scrbook" / Bildschirmversion: "scrreprt"
+
+% Metadaten einlesen
+\input{content/metadata}%% anpassen
+% Pakete
+\usepackage[ngerman,biber]{praeambel} % <= Sprache der Arbeit ("ngerman"/"english"), Biblatex-Backend ("bibtex"/"biber")
+% Literatur laden
+\bibliography{content/literatur}%% anpassen
+\bibliography{content/literatur-kfz}%% anpassen
+\bibliography{content/literatur-sport}%% anpassen
+
+\title{\titel}
+\author{\autor}
+\date{\today}
+% oder
+%\date{2020/07/01}%% anpassen
+%\date{1-Jul-20}
+
+\begin{document}
+
+	% (Haupt-)Titelseite, Abstract & Inhaltsverzeichnis
+	\pagenumbering{roman}
+	%\maketitle
+	% oder
+	\include{content/titlepage}%% anpassen
+	\ifisbook\cleardoubleemptypage\fi\include{content/zusammenfassung}%% anpassen
+	\tableofcontents
+	\cleardoublepage
+    	%% anpassen
+	\listoffigures
+	\listoftables
+	\lstlistoflistings
+	\cleardoublepage
+
+	% Textteil
+	\pagenumbering{arabic}
+	
+   	 %% anpassen
+	\input{content/inhalt} % example
+
+
+	% ggf. Anhang
+	%\appendix\include{content/anhang} % example
+
+	% Index (Register)
+	\ifisbook\cleardoubleemptypage\fi	
+	\printindex%% anpassen
+
+	% Bibliographie
+	\ifisbook\cleardoubleemptypage\fi
+	\phantomsection\addcontentsline{toc}{chapter}{Literatur}
+	\printbibliography% Verzeichnis drucken
+\end{document}

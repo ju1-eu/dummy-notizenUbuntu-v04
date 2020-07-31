@@ -1,0 +1,41 @@
+% ju 27-Jul-20 artikel.tex
+\documentclass[a4paper,12pt]{scrartcl}
+\input{content/metadata}%% anpassen
+\usepackage{praeambel-artikel}% Pakete
+% Literatur laden
+\bibliography{content/literatur}      %% anpassen
+\bibliography{content/literatur-kfz}  %% anpassen
+\bibliography{content/literatur-sport}%% anpassen
+%% anpassen
+\title{\titel}% \section, wenn Artikel
+\author{\autor}
+\date{\today}
+%\date{2020/08/01}%% anpassen
+%\date{1-Aug-20}
+%
+\begin{document}
+	%% anpassen
+	%\maketitle
+	%\tableofcontents  
+	%\listoffigures 
+	%\listoftables 
+	%\lstlistoflistings
+
+	%% anpassen	
+	%\begin{abstract}
+	%	Zusammenfassung
+	%\end{abstract}
+
+%% anpassen
+%---------------------------------------------------------------
+
+	\section{Spickzettel -- Markdown}
+		\input{tex/Spickzettel-Markdown}
+
+%---------------------------------------------------------------
+
+	\printindex% Index (Register)
+	% Bibliographie
+	%\phantomsection\addcontentsline{toc}{section}{Literatur}
+	\printbibliography% Literaturverzeichnis
+\end{document}

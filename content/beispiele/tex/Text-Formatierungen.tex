@@ -1,0 +1,134 @@
+%\chapter{Beispiel für Formatierungen}
+
+Dieses Kapitel demonstriert die üblichsten Formatierungsmöglichkeiten. Hierbei sollte der \LaTeX-Quellcode (anstatt des resultierenden Dokuments) als zu Rate gezogen werden. :-)
+
+
+\verb|\textbf| \textbf{Ein formatierter Text} normaler Text \verb|\emph|  \emph{Ein formatierter Text} normaler Text \verb|\footnote| \footnote{Fussnote}. \verb|\enquote| \enquote{Anführungszeichen} oder >>Anführungszeichen<<
+
+12~Byte, 6~kg, 100~EUR, 1--12, 299~792~458~m/s, 3~Liter, von \ldots bis \ldots
+
+$12~Byte, 6~kg, 100~EUR, 299~792~458~m/s, 3~Liter$
+
+\verb|12~Byte|, \verb|6~kg|, \verb|100~EUR|, \verb|1--12|, \verb|299~792~458~m/s|, \verb|3~Liter|, \verb|von \ldots bis \ldots|
+
+Liste der recht­schreib­lich schwieri­gen Wörter\footnote{\url{https://www.duden.de/Liste-der-rechtschreiblich-schwierigen-Woerter}}.
+
+Rechtschreibkontrolle - eine korrekte Rechtschreibung und Grammatik sind ein Muss!\footnote{\url{https://languagetool.org/de/}}.
+
+
+
+\section{Aufzählungen}
+
+\begin{itemize}
+	\item a
+	\item b
+\end{itemize}
+
+\begin{enumerate}
+	\item eins 
+	\item zwei
+\end{enumerate}
+
+
+\begin{description}
+	\item[Beschreibung...] xyz 
+	\item[Beschreibung...] zyx
+\end{description}
+
+
+\section{Gliederung -- Abschnitte, Unterabschnitte \& Absätze} \label{sec:structure}
+Ein (Latex-)Dokument lässt je nach Dokumentenklasse (nicht jede Klasse unterstützt jede Untergliederung) unterteilen bzw. gliedern. In diesem Dokument stehen folgende Befehle zur Verfügung:
+\begin{itemize}
+	\item \verb|\chapter{...}|
+	\item \verb|\section{...}      \label{sec:...}|
+	\item \verb|\subsection{...}   \label{subsec:...}|
+	\item \verb|\subsubsection{...}\label{subsubsec:...}|
+	\item \verb|\paragraph{...}    \label{par:...}|
+	\item \verb|\subparagraph{...} \label{subpar:...}|
+\end{itemize}
+
+\section{Referenzen}
+
+\paragraph{Verweise (label + autoref)}
+\verb|\autoref| \& \verb|\label| Text (\autoref{code:one}). Text (\autoref{fig:Chicken1}) Text \autoref{tab:tabneu} Text \autoref{sec:structure}.
+
+\paragraph{Quellenangaben (cite)}
+\verb|\cite| Text\cite{monk:2014:raspberry} Quelle: ~\cite{kofler:2015:raspberry}
+
+\paragraph{Quellenangaben (textcite)}
+\verb|\textcite| Text \textcite{monk:2014:raspberry} Quelle: ~\textcite{kofler:2015:raspberry}
+
+\paragraph{Quellenangaben (footfullcite)}
+\verb|\footfullcite| Text\footfullcite{monk:2014:raspberry} Quelle: ~\footfullcite{kofler:2015:raspberry}
+
+\emph{Aplpe TV}\footnote{\url{http://www.aplpe.cmo}}
+
+
+\section{Abbildungen}
+
+Text (\autoref{fig:Chicken1}).
+\begin{figure}[!hb]% hier: !hb
+	\centering
+	\includegraphics[width=0.4\linewidth]{images/logo}
+	\caption{Chicken chien}\label{fig:Chicken1}%% anpassen
+\end{figure}
+
+Text (\autoref{fig:Chicken2} und \autoref{fig:Chicken1}).
+
+\begin{figure}[!hb]% hier: !hb
+	\centering
+	\includegraphics[height=0.4\linewidth,angle=90]{images/logo}
+	\caption{Bild 90 Grad drehen.}\label{fig:Chicken2}%% anpassen
+\end{figure}
+
+
+\section{Quelltext}
+\verb|\lstinline| oder \verb|\verb|.
+
+\paragraph{verb}
+Bsp. \verb|int|, \verb|bool| (\autoref{code:one}).
+
+\paragraph{lstlisting}
+
+\lstset{language=C++}% C, TeX, Bash, Python
+\begin{lstlisting}[%% anpassen
+caption={Es ist eine alte Tradition, eine neue Programmiersprache mit einem Hello-World-Programm einzuweihen. Auch dieses Buch soll mit der Tradition nicht brechen, hier ist das Hello-World-Programm in C++}, label=code:one]
+// Ein- und Ausgabebibliothek
+#include <iostream>
+
+int main(){// Hauptfunktion
+	std::cout << "Hallo Welt!" << std::endl;// Ausgabe
+	return 0;
+}
+\end{lstlisting}
+
+\section{Tabellen neu}
+
+(\autoref{tab:tabneu}).
+\begin{table}[!ht]% hier: !ht
+	\centering 
+	\caption{Tabelle neu, gute Beschreibung einfügen}\label{tab:tabneu}%% anpassen
+	\begin{tabular}{@{}rlc@{}}
+	\toprule 
+    \textbf{Nr.} & \textbf{Begriffe} & \textbf{Erklärung}\\
+	\midrule
+    1 & a1 & a2\\
+    2 & b1 & b2\\
+    3 & c1 & c2\\
+    4 & a1 & a2\\
+	\bottomrule
+ 	\end{tabular}
+\end{table}
+
+
+\section{Gleichungen}
+
+$x$--$y$, \( x^2 + y^2 = 1 \)
+
+(\autoref{eq:summe}).
+\begin{equation}\label{eq:summe}%% anpassen
+	\sum \limits_{i=1}^n i = \frac{n(n+1)}{2}
+\end{equation}
+
+
+
