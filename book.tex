@@ -24,7 +24,7 @@
 	%\maketitle
 	% oder
 	\include{content/titlepage}%% anpassen
-	\ifisbook\cleardoubleemptypage\fi\include{content/zusammenfassung}%% anpassen
+	%\ifisbook\cleardoubleemptypage\fi\include{content/zusammenfassung}%% anpassen
 	\tableofcontents
 	\cleardoublepage
     %% anpassen
@@ -35,9 +35,11 @@
 
 	% Textteil
 	\pagenumbering{arabic}
-	
+
+    %------------------------------------------------------------------	
    	 %% anpassen
 	\input{content/inhalt} % example
+    %------------------------------------------------------------------
 
 	% ggf. Anhang
 	%\appendix\include{content/anhang} % example
