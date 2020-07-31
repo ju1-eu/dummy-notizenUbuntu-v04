@@ -1,5 +1,6 @@
 ju 31-Jul-2020 git.log
-* 8acf21d (HEAD -> master, origin/master, backupUSB/master, backupHD/master) script inputKapitelLatex
+* a40297f (HEAD -> master, origin/master, backupUSB/master, backupHD/master) Artikel anlegen
+* 8acf21d script inputKapitelLatex
 * 04ba278 Kapitel auto erstellen
 * b128bda Markdown - Latex - Notiz
 * c0302d4 git version
