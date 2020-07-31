@@ -25,8 +25,8 @@ echo "+ $info"
 
    # Github Repository: origin/master
       # anpassen    
-  git remote add origin https://github.com/ju1-eu/dummy-notizenUbuntu-v04.git
-  git push -u origin master
+  #git remote add origin https://github.com/ju1-eu/dummy-notizenUbuntu-v04.git
+  #git push -u origin master
 
   # backup Repository: backupUSB/master
       # anpassen
