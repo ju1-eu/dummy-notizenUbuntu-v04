@@ -47,7 +47,7 @@ if [ $exist -ge 1 ]; then
         # Dateiname ohne Endung
         scriptname=`basename "$i" .$EXTENSION` # anpassen
         # latex quellcode
-        printf "%%\section{$scriptname}\n"                              >> ../$archiv/$file
+        printf "\section{$scriptname}\n"                              >> ../$archiv/$file
         printf "\n"                                                   >> ../$archiv/$file
         echo "%$i (\autoref{code:$scriptname-$n}).% Referenz"             >> ../$archiv/$file
         printf "%%\n"                                                 >> ../$archiv/$file
@@ -55,7 +55,7 @@ if [ $exist -ge 1 ]; then
         printf "\lstinputlisting[%% anpassen\n"                       >> ../$archiv/$file
         printf "    caption={Quellcode in $SPRACHE: $i}, %%label={code:$scriptname-$n}\n" >> ../$archiv/$file
         printf "]{$code/$i}%% file\n\n"                               >> ../$archiv/$file
-        echo "%\newpage"                                               >> ../$archiv/$file
+        echo "\newpage"                                               >> ../$archiv/$file
         ((n+=1))
     done
 fi
@@ -72,7 +72,7 @@ if [ $exist -ge 1 ]; then
         # Dateiname ohne Endung
         scriptname=`basename "$i" .$EXTENSION` # anpassen
         # latex quellcode
-        printf "%%\section{$scriptname}\n"                                       >> ../$archiv/$file
+        printf "\section{$scriptname}\n"                                       >> ../$archiv/$file
         printf "\n"                                                   >> ../$archiv/$file
         echo "%$i (\autoref{code:$scriptname-$n}).% Referenz"                      >> ../$archiv/$file
         printf "%%\n"                                                 >> ../$archiv/$file
@@ -80,7 +80,7 @@ if [ $exist -ge 1 ]; then
         printf "\lstinputlisting[%% anpassen\n"                       >> ../$archiv/$file
         printf "    caption={Quellcode in $SPRACHE: $i}, %%label={code:$scriptname-$n}\n" >> ../$archiv/$file
         printf "]{$code/$i}%% file\n\n"                                  >> ../$archiv/$file
-        echo "%\newpage"                                               >> ../$archiv/$file
+        echo "\newpage"                                               >> ../$archiv/$file
         ((n+=1))
     done
 fi
@@ -97,7 +97,7 @@ if [ $exist -ge 1 ]; then
         # Dateiname ohne Endung
         scriptname=`basename "$i" .$EXTENSION` # anpassen
         # latex quellcode
-        printf "%%\section{$scriptname}\n"                                       >> ../$archiv/$file
+        printf "\section{$scriptname}\n"                                       >> ../$archiv/$file
         printf "\n"                                                   >> ../$archiv/$file
         echo "%$i (\autoref{code:$scriptname-$n}).% Referenz"                      >> ../$archiv/$file
         printf "%%\n"                                                 >> ../$archiv/$file
@@ -105,7 +105,7 @@ if [ $exist -ge 1 ]; then
         printf "\lstinputlisting[%% anpassen\n"                       >> ../$archiv/$file
         printf "    caption={Quellcode in $SPRACHE: $i}, %%label={code:$scriptname-$n}\n" >> ../$archiv/$file
         printf "]{$code/$i}%% file\n\n"                                  >> ../$archiv/$file
-        echo "%\newpage"                                               >> ../$archiv/$file
+        echo "\newpage"                                               >> ../$archiv/$file
         ((n+=1))
     done
 fi
@@ -122,7 +122,7 @@ if [ $exist -ge 1 ]; then
         # Dateiname ohne Endung
         scriptname=`basename "$i" .$EXTENSION` # anpassen
         # latex quellcode
-        printf "%%\section{$scriptname}\n"                                       >> ../$archiv/$file
+        printf "\section{$scriptname}\n"                                       >> ../$archiv/$file
         printf "\n"                                                   >> ../$archiv/$file
         echo "%$i (\autoref{code:$scriptname-$n}).% Referenz"                      >> ../$archiv/$file
         printf "%%\n"                                                 >> ../$archiv/$file
@@ -130,7 +130,7 @@ if [ $exist -ge 1 ]; then
         printf "\lstinputlisting[%% anpassen\n"                       >> ../$archiv/$file
         printf "    caption={Quellcode in $SPRACHE: $i}, %%label={code:$scriptname-$n}\n" >> ../$archiv/$file
         printf "]{$code/$i}%% file\n\n"                                  >> ../$archiv/$file
-        echo "%\newpage"                                               >> ../$archiv/$file
+        echo "\newpage"                                               >> ../$archiv/$file
         ((n+=1))
     done
 fi
@@ -147,7 +147,7 @@ if [ $exist -ge 1 ]; then
         # Dateiname ohne Endung
         scriptname=`basename "$i" .$EXTENSION` # anpassen
         # latex quellcode
-        printf "%%\section{$scriptname}\n"                                       >> ../$archiv/$file
+        printf "\section{$scriptname}\n"                                       >> ../$archiv/$file
         printf "\n"                                                   >> ../$archiv/$file
         echo "%$i (\autoref{code:$scriptname-$n}).% Referenz"                      >> ../$archiv/$file
         printf "%%\n"                                                 >> ../$archiv/$file
@@ -155,7 +155,7 @@ if [ $exist -ge 1 ]; then
         printf "\lstinputlisting[%% anpassen\n"                       >> ../$archiv/$file
         printf "    caption={Quellcode in $SPRACHE: $i}, %%label={code:$scriptname-$n}\n" >> ../$archiv/$file
         printf "]{$code/$i}%% file\n\n"                                  >> ../$archiv/$file
-        echo "%\newpage"                                               >> ../$archiv/$file
+        echo "\newpage"                                               >> ../$archiv/$file
         ((n+=1))
     done
 fi
@@ -172,7 +172,7 @@ if [ $exist -ge 1 ]; then
         # Dateiname ohne Endung
         scriptname=`basename "$i" .$EXTENSION` # anpassen
         # latex quellcode
-        printf "%%\section{$scriptname}\n"                                       >> ../$archiv/$file
+        printf "\section{$scriptname}\n"                                       >> ../$archiv/$file
         printf "\n"                                                   >> ../$archiv/$file
         echo "%$i (\autoref{code:$scriptname-$n}).% Referenz"                      >> ../$archiv/$file
         printf "%%\n"                                                 >> ../$archiv/$file
@@ -180,7 +180,7 @@ if [ $exist -ge 1 ]; then
         printf "\lstinputlisting[%% anpassen\n"                       >> ../$archiv/$file
         printf "    caption={Quellcode in $SPRACHE: $i}, %%label={code:$scriptname-$n}\n" >> ../$archiv/$file
         printf "]{$code/$i}%% file\n\n"                                  >> ../$archiv/$file
-        echo "%\newpage"                                               >> ../$archiv/$file
+        echo "\newpage"                                               >> ../$archiv/$file
         ((n+=1))
     done
 fi

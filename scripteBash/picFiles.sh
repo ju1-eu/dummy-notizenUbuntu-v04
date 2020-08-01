@@ -14,11 +14,11 @@
 # Variablen
 file="Pics-files.tex"
 images="images"
-bildgroesse=".20"    # width=.60\textwidth
+bildgroesse=".80"    # width=.60\textwidth
 archiv="archiv"
 info="Alle Abbildungen '$images/' in Latex speichern"
 info2="    * '$archiv/$file'"
-info3="    * Bildgröße: 0.20/1"
+info3="    * Bildgröße: 0.80/1"
 timestamp=$(date +"%d-%h-%Y")
 copyright="ju $timestamp $file"
 
@@ -54,10 +54,31 @@ if [ $exist -ge 1 ]; then
         # latex quellcode
         echo "%\section{$picname}"                       >> ../$archiv/$file
         echo "%"                                         >> ../$archiv/$file
-        echo "%Abb.$n-$picname (\autoref{fig:Abb.$n-$picname}).% Referenz"   >> ../$archiv/$file
+        echo "%$picname (\autoref{fig:$picname}).% Referenz"   >> ../$archiv/$file
         echo "$T1"                                       >> ../$archiv/$file
         echo "  \includegraphics[width=$bildgroesse\textwidth]{images/$i}%" >> ../$archiv/$file
-	    echo "  \caption{Abb.$n-$picname}%\label{fig:Abb.$n-$picname}%% anpassen"         >> ../$archiv/$file   
+	    echo "  \caption{$picname}%\label{fig:$picname}%% anpassen"         >> ../$archiv/$file   
+        echo "$T2"                                       >> ../$archiv/$file                                       >> ../$archiv/$file
+        echo "%\newpage"                                 >> ../$archiv/$file
+        ((n+=1))
+    done
+fi
+
+EXTENSION="pdf" 
+exist=$(find -iname "*.$EXTENSION" | wc -l)
+n=1 # Pic Zaehler ((n+=1))
+if [ $exist -ge 1 ]; then
+    # vorhanden
+    for i in *.$EXTENSION; do
+        # Dateiname ohne Endung
+        picname=`basename "$i" .$EXTENSION` # anpassen
+        # latex quellcode
+        echo "%\section{$picname}"                       >> ../$archiv/$file
+        echo "%"                                         >> ../$archiv/$file
+        echo "%$picname (\autoref{fig:$picname}).% Referenz"   >> ../$archiv/$file
+        echo "$T1"                                       >> ../$archiv/$file
+        echo "  \includegraphics[width=$bildgroesse\textwidth]{images/$i}%" >> ../$archiv/$file
+	    echo "  \caption{$picname}%\label{fig:$picname}%% anpassen"         >> ../$archiv/$file   
         echo "$T2"                                       >> ../$archiv/$file                                       >> ../$archiv/$file
         echo "%\newpage"                                 >> ../$archiv/$file
         ((n+=1))

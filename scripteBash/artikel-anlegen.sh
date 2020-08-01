@@ -67,19 +67,19 @@ if [ $exist -ge 1 ]; then
 		if [ ! "Neu.tex" = "$i" ]; then
 			# dateiname ohne Endung
 			texname=`basename "$i" .tex`
-			echo "% $copyright"       > ../$artikel/$i # file neu anlegen
-			echo "$T1"               >> ../$artikel/$i
+			echo "% $copyright"       > ../$artikel/$texname-artikel.tex # file neu anlegen
+			echo "$T1"               >> ../$artikel/$texname-artikel.tex
 			echo "%% anpassen
-\title{$texname}"            >> ../$artikel/$i
-			echo "$T2"               >> ../$artikel/$i
+\title{$texname}"                    >> ../$artikel/$texname-artikel.tex
+			echo "$T2"               >> ../$artikel/$texname-artikel.tex
 			echo "
 		%% anpassen
 		%-------------------------------------------------
 		%
 			\input{$tex/$i}
 		%
-		%-------------------------------------------------" >> ../$artikel/$i
-			echo "$T3"                                      >> ../$artikel/$i
+		%-------------------------------------------------" >> ../$artikel/$texname-artikel.tex
+			echo "$T3"                                      >> ../$artikel/$texname-artikel.tex
 		fi
 	done
 fi
@@ -94,19 +94,19 @@ if [ $exist -ge 1 ]; then
 		if [ ! "inhalt.tex" = "$i" ]; then
 			# dateiname ohne Endung
 			texname=`basename "$i" .tex`
-			echo "% $copyright"       > ../$artikel/$bsp/$i # file neu anlegen
-			echo "$T1"               >> ../$artikel/$bsp/$i
+			echo "% $copyright"       > ../$artikel/$bsp/$texname-artikel.tex # file neu anlegen
+			echo "$T1"               >> ../$artikel/$bsp/$texname-artikel.tex
 			echo "%% anpassen
-\title{$texname}"            >> ../$artikel/$bsp/$i
-			echo "$T2"               >> ../$artikel/$bsp/$i
+\title{$texname}"                    >> ../$artikel/$bsp/$texname-artikel.tex
+			echo "$T2"               >> ../$artikel/$bsp/$texname-artikel.tex
 			echo "
 		%% anpassen
 		%-------------------------------------------------
 		%
 			\input{$archiv/$i}
 		%
-		%-------------------------------------------------" >> ../$artikel/$bsp/$i
-			echo "$T3"                                      >> ../$artikel/$bsp/$i
+		%-------------------------------------------------" >> ../$artikel/$bsp/$texname-artikel.tex
+			echo "$T3"                                      >> ../$artikel/$bsp/$texname-artikel.tex
 		fi
 	done
 fi
@@ -120,19 +120,19 @@ if [ $exist -ge 1 ]; then
 	for i in *.tex; do
 		# dateiname ohne Endung
 		texname=`basename "$i" .tex`
-		echo "% $copyright"       > ../$artikel/$bsp/$i # file neu anlegen
-		echo "$T1"               >> ../$artikel/$bsp/$i
+		echo "% $copyright"       > ../$artikel/$bsp/$texname-artikel.tex # file neu anlegen
+		echo "$T1"               >> ../$artikel/$bsp/$texname-artikel.tex
 		echo "%% anpassen
-\title{$texname}"            >> ../$artikel/$bsp/$i
-		echo "$T2"               >> ../$artikel/$bsp/$i
+\title{$texname}"                >> ../$artikel/$bsp/$texname-artikel.tex
+		echo "$T2"               >> ../$artikel/$bsp/$texname-artikel.tex
 		echo "
 	%% anpassen
 	%-------------------------------------------------
 	%
 		\input{$tabellen/$i}
 	%
-	%-------------------------------------------------" >> ../$artikel/$bsp/$i
-		echo "$T3"                                      >> ../$artikel/$bsp/$i
+	%-------------------------------------------------" >> ../$artikel/$bsp/$texname-artikel.tex
+		echo "$T3"                                      >> ../$artikel/$bsp/$texname-artikel.tex
 	done
 fi
 cd ..
@@ -145,19 +145,19 @@ if [ $exist -ge 1 ]; then
 	for i in *.tex; do
 		# dateiname ohne Endung
 		texname=`basename "$i" .tex`
-		echo "% $copyright"       > ../../../$artikel/$bsp/$i # file neu anlegen
-		echo "$T1"               >> ../../../$artikel/$bsp/$i
+		echo "% $copyright"       > ../../../$artikel/$bsp/$texname-artikel.tex # file neu anlegen
+		echo "$T1"               >> ../../../$artikel/$bsp/$texname-artikel.tex
 		echo "%% anpassen
-\title{$texname}"            >> ../../../$artikel/$bsp/$i
-		echo "$T2"               >> ../../../$artikel/$bsp/$i
+\title{$texname}"                >> ../../../$artikel/$bsp/$texname-artikel.tex
+		echo "$T2"               >> ../../../$artikel/$bsp/$texname-artikel.tex
 		echo "
 	%% anpassen
 	%-------------------------------------------------
 	%
 		\input{$beispiele/$i}
 	%
-	%-------------------------------------------------" >> ../../../$artikel/$bsp/$i
-		echo "$T3"                                      >> ../../../$artikel/$bsp/$i
+	%-------------------------------------------------" >> ../../../$artikel/$bsp/$texname-artikel.tex
+		echo "$T3"                                      >> ../../../$artikel/$bsp/$texname-artikel.tex
 	done
 fi
 cd ../../..

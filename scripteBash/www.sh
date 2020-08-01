@@ -58,34 +58,63 @@ echo "	<p><a href=\"../$file\">Start</a></p>
 	<h2>alle Pics</h2>"  >> ./$html/$pics
 
 cd $img
-n=1 # Pic Zaehler ((n+=1))
-for i in *.webp; do
-	# Dateiname ohne Endung
-	filename=`basename "$i" .jpg` # anpassen
-	# html/alle-pics.html
-	echo "	<!-- Abb. $n -->
-	<p><a href=\"../$img/$i\">
-	  <figure>
-	    <img class=scaled src=\"../$img/$i\" alt=\"$filename\" style="width:60.0%">
-	    <figcaption>Abb. $n : $i</figcaption>
-	  </figure>
-	</a></p>" >> ../$html/$pics
-	((n+=1))
-done
 
-for i in *.svg; do
-	# Dateiname ohne Endung
-	filename=`basename "$i" .svg` # anpassen
-	# html/alle-pics.html
-	echo "	<!-- Abb. $n -->
-	<p><a href=\"../$img/$i\">
-	  <figure>
-	    <img class=scaled src=\"../$img/$i\" alt=\"$filename\" style="width:60.0%">
-	    <figcaption>Abb. $n : $i</figcaption>
-	  </figure>
-	</a></p>" >> ../$html/$pics
-	((n+=1))
-done
+EXTENSION="webp" 
+exist=$(find -iname "*.$EXTENSION" | wc -l)
+n=1 # Pic Zaehler ((n+=1))
+if [ $exist -ge 1 ]; then
+	for i in *.webp; do
+		# Dateiname ohne Endung
+		filename=`basename "$i" .webp` # anpassen
+		# html/alle-pics.html
+		echo "	<!-- Abb. $n -->
+		<p><a href=\"../$img/$i\">
+		<figure>
+			<img class=scaled src=\"../$img/$i\" alt=\"$filename\" style="width:60.0%">
+			<figcaption>Abb. $n : $i</figcaption>
+		</figure>
+		</a></p>" >> ../$html/$pics
+		((n+=1))
+	done
+fi
+
+EXTENSION="svg" 
+exist=$(find -iname "*.$EXTENSION" | wc -l)
+n=1 # Pic Zaehler ((n+=1))
+if [ $exist -ge 1 ]; then
+	for i in *.svg; do
+		# Dateiname ohne Endung
+		filename=`basename "$i" .svg` # anpassen
+		# html/alle-pics.html
+		echo "	<!-- Abb. $n -->
+		<p><a href=\"../$img/$i\">
+		<figure>
+			<img class=scaled src=\"../$img/$i\" alt=\"$filename\" style="width:60.0%">
+			<figcaption>Abb. $n : $i</figcaption>
+		</figure>
+		</a></p>" >> ../$html/$pics
+		((n+=1))
+	done
+fi
+
+EXTENSION="jpg" 
+exist=$(find -iname "*.$EXTENSION" | wc -l)
+n=1 # Pic Zaehler ((n+=1))
+if [ $exist -ge 1 ]; then
+	for i in *.jpg; do
+		# Dateiname ohne Endung
+		filename=`basename "$i" .jpg` # anpassen
+		# html/alle-pics.html
+		echo "	<!-- Abb. $n -->
+		<p><a href=\"../$img/$i\">
+		<figure>
+			<img class=scaled src=\"../$img/$i\" alt=\"$filename\" style="width:60.0%">
+			<figcaption>Abb. $n : $i</figcaption>
+		</figure>
+		</a></p>" >> ../$html/$pics
+		((n+=1))
+	done
+fi
 
 echo "+ $html/alle-pics.html wurde erstellt"
 

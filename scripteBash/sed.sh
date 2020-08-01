@@ -21,6 +21,7 @@ PFAD_LOKAL="..\/images"
 # Bildformat:  pdf, svg, png, jpg, webp
 bildformat="svg"     # eps -> svg
 bildformat_2="webp"  # pdf -> webp
+bildformat_3="jpg"   # wenn kein svg oder webp
 
 # Variablen
 tex_pandoc="tex-pandoc"
@@ -78,7 +79,8 @@ for i in *.html; do
 	sed -i 's/<embed/<img/g' "$i"
 	sed -i '/"images/ s//"..\/images/g' "$i"
 	sed -i '/.eps/ s//.'$bildformat'/g' "$i"
-	sed -i '/.pdf/ s//.'$bildformat_2'/g' "$i"
+	#sed -i '/.pdf/ s//.'$bildformat_2'/g' "$i"
+	sed -i '/.pdf/ s//.'$bildformat_3'/g' "$i"
 	sed -i '/”/ s//\&laquo;/g' "$i"
 	sed -i '/“/ s//\&raquo;/g' "$i"
 done
@@ -135,6 +137,9 @@ for i in *.tex; do
 	sed -i '/vgl. code./ s//%vgl.~(\\autoref{code:})./g' "$i"
 	sed -i '/\\begin{lstlisting}/ s//\\lstset{language='$codelanguage'}% C, TeX, Bash, Python \n\\begin{lstlisting}[\n	%caption={}, label={code:}%% anpassen\n]/g' "$i"
 
+	#\passthrough{\lstinline!code!}
+	sed -i '/\\passthrough{\\lstinline!/ s//\\verb|/g' "$i"
+	sed -i '/!}/ s//|/g' "$i"
 
 	# Literaturangaben
 	# suchen und ersetzen: sed -i '/suchen/ s//ersetzen/g' "$i"
